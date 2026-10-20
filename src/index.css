@@ -1,0 +1,313 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Noto Sans Telugu", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.love-page {
+  background:
+    radial-gradient(ellipse at 50% 30%,
+      #68223f 0%, #361426 45%, #180b18 100%);
+}
+
+.heart-glow {
+  background: radial-gradient(circle, #a83262 0%, #6b2047 55%,
+    transparent 75%);
+  box-shadow: 0 0 65px #f472b655;
+}
+
+.heartbeat {
+  animation: heartbeat 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #fb7185);
+}
+
+.love-button {
+  background: linear-gradient(135deg, #e84d81, #a72b63);
+  box-shadow: 0 8px 30px #e84d8140;
+}
+
+.love-button:hover {
+  box-shadow: 0 8px 42px #f4728580;
+}
+
+.floating-heart {
+  color: #f9a8d4;
+  opacity: 0;
+  animation-name: float-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  text-shadow: 0 0 15px #fb718566;
+}
+
+/* .letter-card {
+  background: linear-gradient(145deg, #fffaf7, #ffe9ee);
+  border: 1px solid #ffffff80; */
+/* } */
+
+
+.letter-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      #ffc6d9 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 95% 90%,
+      #fbcfe8 0%,
+      transparent 35%
+    ),
+    linear-gradient(145deg, #fffaf7, #ffe4ec, #fff1f5);
+  border: 1px solid #ffffffaa;
+  box-shadow:
+    0 0 30px #fb718533,
+    0 20px 70px #00000035;
+}
+
+/* Large decorative heart in the upper corner */
+.letter-card::before {
+  content: "♥";
+  position: absolute;
+  top: -35px;
+  right: -8px;
+  font-size: 150px;
+  line-height: 1;
+  color: #f472b6;
+  opacity: 0.12;
+  transform: rotate(15deg);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Soft romantic decoration in the lower corner */
+.letter-card::after {
+  content: "♥  ✦  ♥";
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  font-size: 30px;
+  letter-spacing: 8px;
+  color: #e11d74;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+/* .reveal-in {
+  animation: reveal-in 0.9s ease-out both;
+} */
+
+
+.reveal-in {
+  animation: love-reveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes love-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.92);
+    filter: blur(6px);
+  }
+
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.message-hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.message-hearts span {
+  position: absolute;
+  bottom: -30px;
+  color: #e11d74;
+  opacity: 0;
+  font-size: 20px;
+  animation: message-heart-float 7s linear infinite;
+}
+
+.message-hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.message-hearts span:nth-child(2) {
+  left: 28%;
+  animation-delay: 2s;
+  font-size: 16px;
+}
+
+.message-hearts span:nth-child(3) {
+  left: 48%;
+  animation-delay: 4s;
+}
+
+.message-hearts span:nth-child(4) {
+  left: 70%;
+  animation-delay: 1s;
+  font-size: 14px;
+}
+
+.message-hearts span:nth-child(5) {
+  left: 88%;
+  animation-delay: 3s;
+}
+
+.message-hearts span:nth-child(6) {
+  left: 58%;
+  animation-delay: 5s;
+}
+
+
+.letter-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.message-hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.message-hearts span {
+  position: absolute;
+  bottom: -35px;
+  color: #e11d74;
+  font-size: 24px;
+  opacity: 0;
+  text-shadow: 0 0 12px #fb7185;
+  animation: message-heart-float 7s linear infinite;
+}
+
+.message-hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.message-hearts span:nth-child(2) {
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.message-hearts span:nth-child(3) {
+  left: 45%;
+  animation-delay: 2s;
+}
+
+.message-hearts span:nth-child(4) {
+  left: 65%;
+  animation-delay: 3s;
+}
+
+.message-hearts span:nth-child(5) {
+  left: 82%;
+  animation-delay: 4s;
+}
+
+.message-hearts span:nth-child(6) {
+  left: 55%;
+  animation-delay: 5s;
+}
+
+@keyframes message-heart-float {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  85% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-350px) scale(1.2) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+
+/* Keep the letter text above the decorative hearts */
+.letter-card > *:not(.message-hearts) {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.13); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.08); }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 0.65; }
+  85% { opacity: 0.45; }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
